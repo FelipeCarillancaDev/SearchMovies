@@ -1,13 +1,12 @@
-
-<div class="movie">
+<div class="movie" (click)="selectMovie()">
   <div>
-    <p>{{movie.Year}}</p>
+    <p>{{ movie.release_date | date:'yyyy' }}</p>
   </div>
   <div>
-    <img src="{{getImage()}}" [alt]="movie.Title">
+    <img [src]="getImage()" [alt]="movie.original_title">
   </div>
   <div>
-    <span>{{movie.Type}}</span>
-    <h3>{{movie.Title}}</h3>
+    <span>Ranking: {{ movie.vote_average | number:'1.1-1' }}</span> <!--Dejar solo un decimal-->
+    <h3>{{ movie.title }}</h3>
   </div>
 </div>
