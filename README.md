@@ -1,27 +1,84 @@
-# Movies
+# SearchMovies
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+Proyecto Angular para buscar y mostrar películas (demo). Contiene componentes, interfaces y servicios mínimos para consumir datos y mostrar tarjetas de películas.
 
-## Development server
+## Contenido rápido
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular CLI: 18.1.2
+- Aplicación de ejemplo para buscar y mostrar películas usando servicios locales (o una API externa si se configura).
 
-## Code scaffolding
+## Requisitos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Node.js >= 18.x (recomendado) y npm
+- Angular CLI (opcional, puedes usar los scripts npm incluidos)
 
-## Build
+## Instalación
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clona el repositorio:
 
-## Running unit tests
+   git clone <url-del-repo>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Entra a la carpeta del proyecto e instala dependencias:
 
-## Running end-to-end tests
+   cd SearchMovies
+   npm install
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Scripts útiles
 
-## Further help
+- `npm start` / `ng serve` — Inicia el servidor de desarrollo en http://localhost:4200/
+- `npm run build` — Genera la build en `dist/`
+- `npm run watch` — Compila en modo watch (desarrollo)
+- `npm test` — Ejecuta los tests unitarios (Karma)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Puedes ver los scripts completos en `package.json`.
+
+## Uso
+
+1. Levanta la app:
+
+   npm start
+
+2. Abre tu navegador en http://localhost:4200/
+
+3. Interactúa con la UI para buscar películas o navegar la lista.
+
+## Estructura principal del proyecto
+
+- `src/app/` — Código fuente de la aplicación Angular
+  - `components/` — Componentes reutilizables
+  - `card-movie/` — Componente que renderiza una tarjeta de película
+  - `movies/` — Componente que lista o busca películas
+  - `services/` — Servicios para obtener datos (`movies.service.ts`, `movie-backen.service.ts`)
+  - `interfaces/` — Tipos e interfaces TypeScript (`movie.ts`, `director.ts`, `apiResponse.ts`)
+
+## Contrato mínimo (inputs/outputs)
+
+- Servicio `MoviesService` devuelve objetos `Movie` con campos como `id`, `title`, `director`, `year`, `poster`.
+- Componentes consumen esos objetos y renderizan tarjetas con la información básica.
+
+## Notas para desarrollo
+
+- Si quieres conectar una API real, edita `movie-backen.service.ts` para apuntar al endpoint deseado y ajustar `apiResponse`.
+- Para generar componentes o servicios adicionales usa `ng generate component nombre` o `ng generate service nombre`.
+
+## Tests y calidad
+
+- Los tests se ejecutan con Karma/Jasmine. Ejecuta `npm test`.
+
+## Contribuir
+
+Si quieres contribuir:
+
+1. Crea un fork y una rama con tu feature: `git checkout -b feature/nombre`
+2. Haz commits claros y abre un pull request describiendo los cambios.
+
+## Licencia
+
+Agrega aquí la licencia del proyecto si aplica (por ejemplo MIT).
+
+## Recursos
+
+- Documentación Angular: https://angular.io/
+- Angular CLI: https://github.com/angular/angular-cli
+
+---
